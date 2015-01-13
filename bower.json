@@ -1,0 +1,28 @@
+{
+  "name": "jquery-list-draggable",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kmarques/jquery-list-draggable",
+  "authors": [
+    "Karl Marques <marques.karl@live.fr>"
+  ],
+  "main": ["js/list-draggable.js", "css/list-draggable.css"],
+  "keywords": [
+    "list",
+    "drag'n'drop",
+    "classify",
+    "manage",
+    "draggable",
+    "jquery"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.0 <2.0.0"
+  },
+  "license": "Apache License, Version 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
