@@ -5,6 +5,7 @@ A jQuery plugin in order to manage different lists
   * [Change log](#change-log)
   * [Requirements](#requirements)
   * [Installation](#installation)
+  * [Documentation](#documentation)
   * [Contributions](#contributions)
   * [Versioning](#versioning)
   * [Git branching model](#git-branching-model)
@@ -25,6 +26,8 @@ See [CHANGELOG](CHANGELOG.md) file for details.
  ou
  `bower install jquery-list-draggable`
 
+## Documentation
+Please find the documentation [here](doc/DOCUMENTATION.md)
 
 ## Contributions
 All suggestions for improvement or direct contributions are very welcome.
