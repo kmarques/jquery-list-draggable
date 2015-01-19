@@ -5,7 +5,8 @@ jQuery List Draggable provide a flexible lists manager
 ## Table of Contents
   * [Usage](#usage)
   * [Options](#options)
-  * [Callbacks](#callbacks)
+  * [Data](#data)
+  * [Renders](#renders)
 
 
 ## Usage
@@ -15,20 +16,21 @@ jQuery List Draggable provide a flexible lists manager
 
 ## Options
 
- | Parameter        | Type    | Default | Description |
- |:-----------------|:-------:|:-------:|:------------|
- | multiSelect      | boolean | false   | Enable multi-select mode |
- | trash            | boolean | false   | Enable trash icon |
- | removeIcon       | boolean | true    | Add a remove icon in order to delete the item from the current list |
- | searchable       | boolean | false   | Add a search box in top of each list |
- | displayResume    | boolean | true    | Display a summary of chosen lists for each groups on the original list, available when *displayGroup* is *true* |
- | displayGroup     | boolean | false   | Display group of items names |
- | displayShortcuts | boolean | false   | Add summary of each list name on top of each list in order to drag'n'drop or click on them to dispatch items quickly |
- | hideSubList      | boolean | false   | Hide each list expected the original, useful with *displayShortcuts* enabled |
- | trashList        | string  | 'none'  | Name of the trash list (not assigned items) |
- | groups           | array   | []      | Group of list definitions |
- | lists            | array   | []      | Lists definitions |
- | language         | object  | {}      | Internationalization |
+| Parameter        | Type    | Default | Description |
+|:-----------------|:-------:|:-------:|:------------|
+| multiSelect      | boolean | false   | Enable multi-select mode |
+| trash            | boolean | false   | Enable trash icon |
+| removeIcon       | boolean | true    | Add a remove icon in order to delete the item from the current list |
+| searchable       | boolean | false   | Add a search box in top of each list |
+| displayResume    | boolean | true    | Display a summary of chosen lists for each groups on the original list, available when *displayGroup* is *true* |
+| displayGroup     | boolean | false   | Display group of items names |
+| displayShortcuts | boolean | false   | Add summary of each list name on top of each list in order to drag'n'drop or click on them to dispatch items quickly |
+| hideSubList      | boolean | false   | Hide each list expected the original, useful with *displayShortcuts* enabled |
+| trashList        | string  | 'none'  | Name of the trash list (not assigned items) |
+| groups           | array   | []      | Group of list definitions |
+| lists            | array   | []      | Lists definitions |
+| language         | object  | {}      | Internationalization |
+| data         | object  | {}      | Internationalization |
  
 ### Group definitions
 ```javascript
@@ -56,7 +58,6 @@ jQuery List Draggable provide a flexible lists manager
 * **multiSelectDifferentList** : displayed when drag'n'dropping on the same list
 
 ## Data
-
 The *data* parameter can be a JSON data or a function returning JSON data
 
 **format**:
@@ -104,9 +105,8 @@ or
     return [{},{}];
   }
 ```
-## Renderers
 
-
+## Renders
 * **renderList** : Fired when drawing the list, the *list* object is passed as argument of the drawing function
 ```javascript
  renderList : function(list) {
