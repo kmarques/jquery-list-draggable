@@ -78,7 +78,7 @@
                 '<label>' +
                 '<input type="checkbox">' + plugin.settings.language.printDetails +
                 '</label>' +
-                '</div>')
+                '</div>');
 
           $lists.not('[data-list=original]').hide();
           $lists.not('[data-list!=original]').prepend($checkbox);
