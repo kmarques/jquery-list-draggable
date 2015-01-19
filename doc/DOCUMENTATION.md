@@ -30,7 +30,7 @@ jQuery List Draggable provide a flexible lists manager
 | groups           | array   | []      | Group of list definitions |
 | lists            | array   | []      | Lists definitions |
 | language         | object  | {}      | Internationalization |
-| data         | object  | {}      | Internationalization |
+| data         | function/array  | null      | array of data passed to the lists manager |
  
 ### Group definitions
 ```javascript
@@ -58,7 +58,7 @@ jQuery List Draggable provide a flexible lists manager
 * **multiSelectDifferentList** : displayed when drag'n'dropping on the same list
 
 ## Data
-The *data* parameter can be a JSON data or a function returning JSON data
+The *data* parameter can be a array or a function returning an array
 
 **format**:
 ```javascript
