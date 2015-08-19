@@ -1,0 +1,260 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Documentation - Jquery-list-draggable by kmarques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Documentation</h1>
+      <h2 class="project-tagline">jQuery List Draggable provide a flexible lists manager</h2>
+      <a href="https://github.com/kmarques/jquery-list-draggable" class="btn">View on GitHub</a>
+      <a href="https://github.com/kmarques/jquery-list-draggable/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/kmarques/jquery-list-draggable/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<ul>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#renders">Renders</a></li>
+</ul>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-javascript"><pre> $(<span class="pl-s"><span class="pl-pds">'</span>div.listDraggable<span class="pl-pds">'</span></span>).<span class="pl-c1">listDraggable</span>({options});</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="center">Type</th>
+<th align="center">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">multiSelect</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Enable multi-select mode</td>
+</tr>
+<tr>
+<td align="left">trash</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Enable trash icon</td>
+</tr>
+<tr>
+<td align="left">removeIcon</td>
+<td align="center">boolean</td>
+<td align="center">true</td>
+<td align="left">Add a remove icon in order to delete the item from the current list</td>
+</tr>
+<tr>
+<td align="left">searchable</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Add a search box in top of each list</td>
+</tr>
+<tr>
+<td align="left">displayResume</td>
+<td align="center">boolean</td>
+<td align="center">true</td>
+<td align="left">Display a summary of chosen lists for each groups on the original list, available when <em>displayGroup</em> is <em>true</em>
+</td>
+</tr>
+<tr>
+<td align="left">displayGroup</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Display group of items names</td>
+</tr>
+<tr>
+<td align="left">displayShortcuts</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Add summary of each list name on top of each list in order to drag'n'drop or click on them to dispatch items quickly</td>
+</tr>
+<tr>
+<td align="left">hideSubList</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="left">Hide each list expected the original, useful with <em>displayShortcuts</em> enabled</td>
+</tr>
+<tr>
+<td align="left">trashList</td>
+<td align="center">string</td>
+<td align="center">'none'</td>
+<td align="left">Name of the trash list (not assigned items)</td>
+</tr>
+<tr>
+<td align="left">groups</td>
+<td align="center">array</td>
+<td align="center">[]</td>
+<td align="left">Group of list definitions</td>
+</tr>
+<tr>
+<td align="left">lists</td>
+<td align="center">array</td>
+<td align="center">[]</td>
+<td align="left">Lists definitions</td>
+</tr>
+<tr>
+<td align="left">language</td>
+<td align="center">object</td>
+<td align="center">{}</td>
+<td align="left">Internationalization</td>
+</tr>
+<tr>
+<td align="left">data</td>
+<td align="center">function/array</td>
+<td align="center">null</td>
+<td align="left">array of data passed to the lists manager</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="group-definitions" class="anchor" href="#group-definitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Group definitions</h3>
+
+<div class="highlight highlight-javascript"><pre> groups<span class="pl-k">:</span> [
+   {class<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>col-md-3<span class="pl-pds">'</span></span>, lists<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>original<span class="pl-pds">'</span></span>]}
+ ]</pre></div>
+
+<ul>
+<li>
+<strong>class</strong> : name of CSS classes</li>
+<li>
+<strong>lists</strong> : array of each list which will include in the current group<br>
+</li>
+</ul>
+
+<h3>
+<a id="list-definitions" class="anchor" href="#list-definitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>List definitions</h3>
+
+<div class="highlight highlight-javascript"><pre> lists<span class="pl-k">:</span> [
+   {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>original<span class="pl-pds">'</span></span>, label<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Original<span class="pl-pds">'</span></span>, class<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>col-md-12<span class="pl-pds">'</span></span>}
+ ]</pre></div>
+
+<ul>
+<li>
+<strong>name</strong>  : name of the list</li>
+<li>
+<strong>label</strong> : label of the list, if not specified equals to humanization of the name (ex: country-list =&gt; Country List)</li>
+<li>
+<strong>class</strong> : name of CSS classes</li>
+</ul>
+
+<h3>
+<a id="internationalization" class="anchor" href="#internationalization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Internationalization</h3>
+
+<ul>
+<li>
+<strong>dataMissing</strong>              : displayed when <em>data</em> parameter is not specified</li>
+<li>
+<strong>dataEmpty</strong>                : displayed when <em>data</em> is empty</li>
+<li>
+<strong>printDetails</strong>             : displayed when <em>hideSubList</em> is <em>enabled</em>
+</li>
+<li>
+<strong>multiSelectDifferentList</strong> : displayed when drag'n'dropping on the same list</li>
+</ul>
+
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data</h2>
+
+<p>The <em>data</em> parameter can be a array or a function returning an array</p>
+
+<p><strong>format</strong>:</p>
+
+<div class="highlight highlight-javascript"><pre> [
+   {
+     id<span class="pl-k">:</span>   string/integer   <span class="pl-c">// id of the group,</span>
+     name<span class="pl-k">:</span> string           <span class="pl-c">// name of the group,</span>
+     items<span class="pl-k">:</span> [
+       {
+         id<span class="pl-k">:</span> string/integer   <span class="pl-c">// id of the item,</span>
+         list<span class="pl-k">:</span> string         <span class="pl-c">// id of the list (use *trashList* as non assigned),</span>
+         name<span class="pl-k">:</span> string         <span class="pl-c">// name of the item,</span>
+         ... any other data that could be useful to render an item,
+       },
+       ...
+     ]
+   },
+   ...
+ ]</pre></div>
+
+<p><strong>examples</strong>:</p>
+
+<div class="highlight highlight-javascript"><pre> <span class="pl-en">data</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-k">var</span> result;
+    $.<span class="pl-c1">ajax</span>({
+      url<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>http://my-json-url.json<span class="pl-pds">'</span></span>,
+      dataType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>json<span class="pl-pds">'</span></span>,
+      type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>POST<span class="pl-pds">'</span></span>,
+      async<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+      <span class="pl-en">success</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">json</span>) {
+        result <span class="pl-k">=</span> json;
+      },
+      <span class="pl-en">error</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">e</span>) {
+        result <span class="pl-k">=</span> [];
+      }
+    });
+    <span class="pl-k">return</span> result;
+  }</pre></div>
+
+<p>or</p>
+
+<div class="highlight highlight-javascript"><pre> <span class="pl-en">data</span><span class="pl-k">:</span> <span class="pl-k">function</span> () {
+    <span class="pl-k">return</span> [{},{}];
+  }</pre></div>
+
+<h2>
+<a id="renders" class="anchor" href="#renders" aria-hidden="true"><span class="octicon octicon-link"></span></a>Renders</h2>
+
+<ul>
+<li>
+<strong>renderList</strong> : Fired when drawing the list, the <em>list</em> object is passed as argument of the drawing function</li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre> <span class="pl-en">renderList</span> <span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">list</span>) {
+                <span class="pl-k">return</span> $(<span class="pl-s"><span class="pl-pds">'</span>&lt;div&gt;<span class="pl-pds">'</span></span>
+                       <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;h1&gt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> list.<span class="pl-c1">label</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;/h1&gt;<span class="pl-pds">'</span></span>
+                       <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;ul name="<span class="pl-pds">'</span></span> <span class="pl-k">+</span> list.<span class="pl-c1">name</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>"&gt;&lt;/ul&gt;<span class="pl-pds">'</span></span>
+                       <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;/div&gt;<span class="pl-pds">'</span></span>
+                );
+              }</pre></div>
+
+<ul>
+<li>
+<strong>renderItem</strong> : Fired when drawing the item, the <em>item</em> object is passed as argument of the drawing function </li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre> <span class="pl-en">renderItem</span> <span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">list</span>) {
+                <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;span class="text"&gt;<span class="pl-pds">'</span></span> <span class="pl-k">+</span> item.<span class="pl-c1">name</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;/span&gt;<span class="pl-pds">'</span></span>;
+              }</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kmarques/jquery-list-draggable">Jquery-list-draggable</a> is maintained by <a href="https://github.com/kmarques">kmarques</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+</body></html>
