@@ -64,13 +64,13 @@ The *data* parameter can be a array or a function returning an array
 ```javascript
  [
    {
-     id:   string/integer   id of the group,
-     name: string           name of the group,
+     id:   string/integer   // id of the group,
+     name: string           // name of the group,
      items: [
        {
-         id: string/integer   id of the item,
-         list: string         id of the list (use *trashList* as non assigned),
-         name: string         name of the item,
+         id: string/integer   // id of the item,
+         list: string         // id of the list (use *trashList* as non assigned),
+         name: string         // name of the item,
          ... any other data that could be useful to render an item,
        },
        ...
